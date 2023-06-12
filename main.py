@@ -5,11 +5,11 @@ from flask import Flask, render_template, request
 import requests
 import os
 openai.api_key = os.environ.get("API_KEY").strip()
-
+#openai.api_key = "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"
 app = Flask(__name__)
 
 AUTHORIZATION = os.environ.get("AUTHORIZATION").strip()
-X_USER_ID = os.environ.get("X_USER_ID").strip()
+X_USER_ID = os.environ.get("UseId").strip()
 
 url_1 = "https://play.ht/api/v1/convert"
 url_2 = "https://play.ht/api/v1/articleStatus?transcriptionId="
@@ -92,7 +92,7 @@ def completion():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=80)
+    app.run(debug=True,port=80)
 
 # print(convert("hello world"))
 
