@@ -5,7 +5,7 @@ from flask import Flask, render_template, request
 import requests
 import os
 openai.api_key = os.environ.get("API_KEY").strip()
-#openai.api_key = "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"
+
 app = Flask(__name__)
 
 AUTHORIZATION = os.environ.get("AUTHORIZATION").strip()
