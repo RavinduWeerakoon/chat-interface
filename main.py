@@ -5,11 +5,11 @@ from flask import Flask, render_template, request
 import requests
 import os
 openai.api_key = os.environ.get("API_KEY").strip()
-#openai.api_key = "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"
+
 app = Flask(__name__)
 
-AUTHORIZATION = os.environ.get("AUTHORIZATION").strip()
-X_USER_ID = os.environ.get("UseId").strip()
+AUTHORIZATION = "26dec25a04f44924a5bddcd05a4d91e7"
+X_USER_ID = "Z6zSIj8yDWQzLl25dud3b03TW2K2"
 
 url_1 = "https://play.ht/api/v1/convert"
 url_2 = "https://play.ht/api/v1/articleStatus?transcriptionId="
