@@ -4,12 +4,12 @@ import base64
 from flask import Flask, render_template, request
 import requests
 import os
-openai.api_key = os.environ.get("API_KEY").strip()
+openai.api_key = os.environ.get("OPENAI_API_KEY").strip()
 
 app = Flask(__name__)
 
-AUTHORIZATION = "26dec25a04f44924a5bddcd05a4d91e7"
-X_USER_ID = "Z6zSIj8yDWQzLl25dud3b03TW2K2"
+AUTHORIZATION = os.environ.get("AUTHORIZATION")
+X_USER_ID = os.environ.get("XUSERID")
 
 url_1 = "https://play.ht/api/v1/convert"
 url_2 = "https://play.ht/api/v1/articleStatus?transcriptionId="
@@ -94,5 +94,5 @@ def completion():
 if __name__ == '__main__':
     app.run(debug=True)
 
-# print(convert("hello world"))
+app.run(port=8080)
 
